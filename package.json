@@ -20,7 +20,8 @@
     "pg": "^7.12.1",
     "react": "^16.11.0",
     "react-csv": "^1.1.2",
-    "react-dom": "^16.11.0",    
+    "react-dom": "^16.11.0",
+    "homepage" : "https://crudtesting.herokuapp.com/",
     "reactstrap": "^8.1.1"
   },
   "devDependencies": {
