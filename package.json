@@ -1,5 +1,5 @@
 {
-  "name": "Crud Practice",
+  "name": "Crud",
   "version": "1.0.0",
   "description": "Practicing crud.",
   "main": "server.js",
@@ -11,13 +11,18 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
     "knex": "^0.20.1",
     "morgan": "^1.9.1",
-    "pg": "^7.12.1"
+    "pg": "^7.12.1",
+    "react": "^16.11.0",
+    "react-csv": "^1.1.2",
+    "react-dom": "^16.11.0",
+    "reactstrap": "^8.1.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
