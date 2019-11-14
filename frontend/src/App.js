@@ -3,10 +3,15 @@ import { Container, Row, Col } from 'reactstrap'
 import ModalForm from './Components/Modals/Modal'
 import DataTable from './Components/Tables/DataTable'
 import { CSVLink } from "react-csv"
+import Toolbar from  './Components/Toolbar/Toolbar'
+import SideDrawer from './Components/SideDrawer/SideDrawer'
+import Backdrop from './Components/Backdrop/Backdrop'
+
 
 class App extends Component {
   state = {
-    items: []
+    items: [],
+    sideDraerOpen: false
   }
 
   getItems(){
@@ -44,10 +49,29 @@ class App extends Component {
     this.getItems()
   }
 
+  drawerToggleClickHandler = () => {
+      this.setState((prevState) =>{
+        return {sideDraerOpen: !prevState.sideDraerOpen};
+      }); 
+  };
+
+  backdroClickHandler= () => {
+      this.setState({sideDraerOpen: false});
+  };
+
   render() {
+    let backdrop;
+    if (this.state.sideDraerOpen){
+      backdrop=<Backdrop click={this.backdroClickHandler} />
+    }
     return (
-      <Container className="App">
-        <Row>
+
+      <Container className="App" style={{height:'100%'}}>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} /> 
+        <SideDrawer show={this.state.sideDraerOpen}/>
+        {backdrop}
+
+        <Row style={{marginTop: '64px'}}>
           <Col>
             <h1 style={{margin: "20px 0"}}>CRUD Database1</h1>
           </Col>
